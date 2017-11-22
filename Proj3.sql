@@ -81,7 +81,8 @@ create table planograma
   loc varchar(80) not null,
   constraint pk_planograma primary key(planograma_altura, planograma_ean, planograma_nro, planograma_lado),
   constraint fk_planograma_produto foreign key(planograma_ean) references produto(produto_ean),
-  constraint fk_planograma_prateleira foreign key(planograma_nro, planograma_lado, planograma_altura) references prateleira(prateleira_nro, altura, largura));
+  constraint fk_planograma_prateleira foreign key(planograma_nro, planograma_lado, planograma_altura)
+  references prateleira(prateleira_nro, altura, largura));
 
 create table evento_reposicao
   (operador varchar(80) not null unique,
