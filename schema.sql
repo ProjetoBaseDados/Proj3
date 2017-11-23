@@ -31,10 +31,10 @@ create table super_categoria
 
 create table constituida
   (super_categoria_name 	varchar(80)	not null,
-  categoria_name 	varchar(80)	not null,
-  constraint pk_constituida primary key(super_categoria_name, categoria_name),
+  sub_categoria_name 	varchar(80)	not null,
+  constraint pk_constituida primary key(super_categoria_name, sub_categoria_name),
   constraint fk_constituida_super_categoria foreign key(super_categoria_name) references super_categoria(super_categoria_name),
-  constraint fk_constituida_categoria foreign key(categoria_name) references categoria(categoria_name));
+  constraint fk_constituida_categoria foreign key(sub_categoria_name) references categoria(categoria_name));
 
 create table fornecedor
   (fornecedor_nif char(9) not null unique,
@@ -98,5 +98,5 @@ create table reposicao
   reposicao_unidades int not null,
   constraint pk_reposicao primary key(reposicao_altura, reposicao_ean, reposicao_nro, reposicao_lado, reposicao_operador, reposicao_instante),
   constraint fk_reposicao_event_repo foreign key(reposicao_operador, reposicao_instante) references evento_reposicao(operador, instante),
-  constraint fk_reposicao_prateleira foreign key(reposicao_ean, reposicao_nro, reposicao_lado, reposicao_altura)
+  constraint fk_reposicao_planograma foreign key(reposicao_ean, reposicao_nro, reposicao_lado, reposicao_altura)
   references planograma(planograma_ean, planograma_nro, planograma_lado, planograma_altura));

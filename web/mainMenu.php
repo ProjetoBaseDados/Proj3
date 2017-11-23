@@ -15,7 +15,8 @@
        /*
         * a)
         */
-        echo("<a href=\"insert_categories.php\">Insert/remove categories or sub-categories</a>");
+        echo("<a href=\"insert_categories.php\">Insert categories or sub-categories</a>");
+        echo("<a href=\"remove_categories.php\">Remove categories or sub-categories</a>");
        /*
         * b)
         */
