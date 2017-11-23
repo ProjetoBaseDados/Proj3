@@ -1,15 +1,15 @@
-drop table categoria;
-drop table categoria_simples;
-drop table super_categoria;
-drop table constituida;
-drop table fornecedor;
-drop table produto;
-drop table fornecedor_sec;
-drop table corredor;
-drop table prateleira;
-drop table planograma;
-drop table evento_reposicao;
-drop table reposicao;
+drop table categoria cascade;
+drop table categoria_simples cascade;
+drop table super_categoria cascade;
+drop table constituida cascade;
+drop table fornecedor cascade;
+drop table produto cascade;
+drop table fornecedor_sec cascade;
+drop table corredor cascade;
+drop table prateleira cascade;
+drop table planograma cascade;
+drop table evento_reposicao cascade;
+drop table reposicao cascade;
 
 
 ----------------------------------------
