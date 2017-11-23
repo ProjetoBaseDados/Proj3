@@ -8,9 +8,8 @@ drop table fornecedor_sec cascade;
 drop table corredor cascade;
 drop table prateleira cascade;
 drop table planograma cascade;
-/* drop table reposicao cascade;
-drop table evento_reposicao cascade; */
-
+drop table reposicao cascade;
+drop table evento_reposicao cascade;
 
 ----------------------------------------
 -- Table Creation
@@ -71,19 +70,6 @@ create table prateleira
   constraint pk_prateleira primary key(prateleira_nro, prateleira_lado, prateleira_altura),
   constraint fk_prateleira_corredor foreign key(prateleira_nro) references corredor(corredor_nro));
 
-create table reposicao
-  (reposicao_ean char(13) not null unique,
-  reposicao_nro int not null unique,
-  reposicao_lado varchar(80) not null unique,
-  reposicao_altura int not null unique,
-  reposicao_operador varchar(80) not null unique,
-  reposicao_instante date not null unique,
-  reposicao_unidades int not null,
-  constraint pk_reposicao primary key(reposicao_altura, reposicao_ean, reposicao_nro, reposicao_lado, reposicao_operador, reposicao_instante),
-  constraint fk_reposicao_event_repo foreign key(reposicao_operador, reposicao_instante) references evento_reposicao(operador, instante),
-  constraint fk_reposicao_prateleira foreign key(reposicao_ean, reposicao_nro, reposicao_lado, reposicao_altura)
-  references planograma(planograma_ean, planograma_nro, planograma_lado, planograma_altura));
-
 create table planograma
   (planograma_ean char(13) not null unique,
   planograma_nro int not null unique,
@@ -97,8 +83,20 @@ create table planograma
   constraint fk_planograma_prateleira foreign key(planograma_nro, planograma_lado, planograma_altura)
   references prateleira(prateleira_nro, prateleira_lado, prateleira_altura));
 
-
 create table evento_reposicao
   (operador varchar(80) not null unique,
   instante date not null unique,
   constraint pk_evento_reposicao primary key(operador, instante));
+
+create table reposicao
+  (reposicao_ean char(13) not null unique,
+  reposicao_nro int not null unique,
+  reposicao_lado varchar(80) not null unique,
+  reposicao_altura int not null unique,
+  reposicao_operador varchar(80) not null unique,
+  reposicao_instante date not null unique,
+  reposicao_unidades int not null,
+  constraint pk_reposicao primary key(reposicao_altura, reposicao_ean, reposicao_nro, reposicao_lado, reposicao_operador, reposicao_instante),
+  constraint fk_reposicao_event_repo foreign key(reposicao_operador, reposicao_instante) references evento_reposicao(operador, instante),
+  constraint fk_reposicao_prateleira foreign key(reposicao_ean, reposicao_nro, reposicao_lado, reposicao_altura)
+  references planograma(planograma_ean, planograma_nro, planograma_lado, planograma_altura));
