@@ -23,7 +23,15 @@
        /*
         * c)
         */
-        echo("<a href=\"newaccount.php\">Insert/remove products</a>");
+        echo("<a href=\"list_reposition_events.php\">List reposition events</a>");
+        /*
+        * d)
+        */
+        echo("<a href=\"change_designation.php\">Change designation</a>");
+        /*
+        * e)
+        */
+        echo("<a href=\"list_sub-categories.php\">List sub-categories of super-category</a>");
 
         $db = null;
     }
