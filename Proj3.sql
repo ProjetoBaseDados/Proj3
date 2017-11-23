@@ -8,8 +8,8 @@ drop table fornecedor_sec cascade;
 drop table corredor cascade;
 drop table prateleira cascade;
 drop table planograma cascade;
-drop table evento_reposicao cascade;
-drop table reposicao cascade;
+/* drop table reposicao cascade;
+drop table evento_reposicao cascade; */
 
 
 ----------------------------------------
