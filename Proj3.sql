@@ -82,7 +82,7 @@ create table reposicao
   constraint pk_reposicao primary key(reposicao_altura, reposicao_ean, reposicao_nro, reposicao_lado, reposicao_operador, reposicao_instante),
   constraint fk_reposicao_event_repo foreign key(reposicao_operador, reposicao_instante) references evento_reposicao(operador, instante),
   constraint fk_reposicao_prateleira foreign key(reposicao_ean, reposicao_nro, reposicao_lado, reposicao_altura)
-  references planograma(planograma_ean, planograma_nro, planograma_altura, planograma_largura));
+  references planograma(planograma_ean, planograma_nro, planograma_altura, planograma_lado));
 
 create table planograma
   (planograma_ean char(13) not null unique,
@@ -95,7 +95,7 @@ create table planograma
   constraint pk_planograma primary key(planograma_altura, planograma_ean, planograma_nro, planograma_lado),
   constraint fk_planograma_produto foreign key(planograma_ean) references produto(produto_ean),
   constraint fk_planograma_prateleira foreign key(planograma_nro, planograma_lado, planograma_altura)
-  references prateleira(prateleira_nro, prateleira_altura, prateleira_largura));
+  references prateleira(prateleira_nro, prateleira_altura, prateleira_lado));
 
 
 create table evento_reposicao
