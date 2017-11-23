@@ -61,14 +61,14 @@ create table fornecedor_sec
 
 create table corredor
   (corredor_nro int not null unique,
-  largura int not null,
+  corredor_largura int not null,
   constraint pk_corredor primary key(corredor_nro));
 
 create table prateleira
   (prateleira_nro int not null unique,
-  lado varchar(80) not null unique,
-  altura int not null unique,
-  constraint pk_prateleira primary key(prateleira_nro, lado, altura),
+  prateleira_lado varchar(80) not null unique,
+  prateleira_altura int not null unique,
+  constraint pk_prateleira primary key(prateleira_nro, prateleira_lado, prateleira_altura),
   constraint fk_prateleira_corredor foreign key(prateleira_nro) references corredor(corredor_nro));
 
 create table planograma
@@ -82,7 +82,7 @@ create table planograma
   constraint pk_planograma primary key(planograma_altura, planograma_ean, planograma_nro, planograma_lado),
   constraint fk_planograma_produto foreign key(planograma_ean) references produto(produto_ean),
   constraint fk_planograma_prateleira foreign key(planograma_nro, planograma_lado, planograma_altura)
-  references prateleira(prateleira_nro, altura, largura));
+  references prateleira(prateleira_nro, prateleira_altura, prateleira_largura));
 
 create table evento_reposicao
   (operador varchar(80) not null unique,
