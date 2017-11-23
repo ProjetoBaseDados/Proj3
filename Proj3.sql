@@ -60,24 +60,24 @@ create table fornecedor_sec
   constraint fk_fornecedor_sec_produto foreign key(fornecedor_sec_ean) references produto(produto_ean));
 
 create table corredor
-  (corredor_nro number not null unique,
-  largura number not null,
+  (corredor_nro int not null unique,
+  largura int not null,
   constraint pk_corredor primary key(corredor_nro));
 
 create table prateleira
-  (prateleira_nro number not null unique,
+  (prateleira_nro int not null unique,
   lado varchar(80) not null unique,
-  altura number not null unique,
+  altura int not null unique,
   constraint pk_prateleira primary key(prateleira_nro, lado, altura),
   constraint fk_prateleira_corredor foreign key(prateleira_nro) references corredor(corredor_nro));
 
 create table planograma
   (planograma_ean char(13) not null unique,
-  planograma_nro number not null unique,
+  planograma_nro int not null unique,
   planograma_lado varchar(80) not null unique,
-  planograma_altura number not null unique,
+  planograma_altura int not null unique,
   face varchar(80) not null,
-  unidades number not null,
+  unidades int not null,
   loc varchar(80) not null,
   constraint pk_planograma primary key(planograma_altura, planograma_ean, planograma_nro, planograma_lado),
   constraint fk_planograma_produto foreign key(planograma_ean) references produto(produto_ean),
@@ -91,12 +91,12 @@ create table evento_reposicao
 
 create table reposicao
   (reposicao_ean char(13) not null unique,
-  reposicao_nro number not null unique,
+  reposicao_nro int not null unique,
   reposicao_lado varchar(80) not null unique,
-  reposicao_altura number not null unique,
+  reposicao_altura int not null unique,
   reposicao_operador varchar(80) not null unique,
   reposicao_instante date not null unique,
-  reposicao_unidades number not null,
+  reposicao_unidades int not null,
   constraint pk_reposicao primary key(reposicao_altura, reposicao_ean, reposicao_nro, reposicao_lado, reposicao_operador, reposicao_instante),
   constraint fk_reposicao_event_repo foreign key(reposicao_operador, reposicao_instante) references evento_reposicao(operador, instante),
   constraint fk_reposicao_prateleira foreign key(reposicao_ean, reposicao_nro, reposicao_lado, reposicao_altura)
