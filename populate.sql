@@ -20,7 +20,7 @@ insert into categoria values ('Congelado');           --sub (simples)
 insert into categoria values ('Fresco');              --sub (simples)
 insert into categoria values ('Carne');               --sub (super)
 insert into categoria values ('Talho');               --sub (simples)
-insert into categoria values ('Empacotado');          --sub (simples)
+insert into categoria values ('Empacotada');          --sub (simples)
 insert into categoria values ('Gomas');               --simples
 insert into categoria values ('Sal');                 --simples
 insert into categoria values ('Guardanapos');         --simples
@@ -41,7 +41,7 @@ insert into categoria_simples values ('Rum');
 insert into categoria_simples values ('Congelado');
 insert into categoria_simples values ('Fresco');
 insert into categoria_simples values ('Talho');
-insert into categoria_simples values ('Empacotado');
+insert into categoria_simples values ('Empacotada');
 insert into categoria_simples values ('Gomas');
 insert into categoria_simples values ('Sal');
 insert into categoria_simples values ('Guardanapos');
@@ -68,10 +68,8 @@ insert into constituida values ('Bebidas Alcoolicas', 'Vodka');
 insert into constituida values ('Bebidas Alcoolicas', 'Whisky');
 insert into constituida values ('Bebidas Alcoolicas', 'Rum');
 insert into constituida values ('Comidas', 'Peixe');
-insert into constituida values ('Comidas', 'Peixe');
 insert into constituida values ('Peixe', 'Congelado');
 insert into constituida values ('Peixe', 'Fresco');
-insert into constituida values ('Comidas', 'Carne');
 insert into constituida values ('Comidas', 'Carne');
 insert into constituida values ('Carne', 'Empacotada');
 insert into constituida values ('Carne', 'Talho');
@@ -87,55 +85,55 @@ insert into fornecedor values ('123456782', 'Forn_2');
 insert into fornecedor values ('123456781', 'Forn_1');
 insert into fornecedor values ('123456780', 'Forn_0');
 
-insert into produto values ('1234567891011', 'cola pleb', '22-11-2017', 'Coca-Cola', '123456789'); --ean, design, data, nome categoria, fornecedorP_nif
-insert into produto values ('1234567891012', 'Coca-Cola OG', '22-11-2017', 'Coca-Cola', '123456789');
-insert into produto values ('1234567891013', 'Ice Tea Pessego', '22-11-2017', 'Ice Tea', '123456789');
-insert into produto values ('1234567891014', 'Ice Tea Limao', '22-11-2017', 'Ice Tea', '123456789');
-insert into produto values ('1234567891015', 'sprite pleb', '22-11-2017', 'Sprite', '123456789');
-insert into produto values ('1234567891016', 'Sprite', '22-11-2017', 'Sprite', '123456789');
-insert into produto values ('1234567891017', 'Casal Garcia', '22-11-2017', 'Vinho', '123456788');
-insert into produto values ('1234567891018', 'Vinho do Porto', '22-11-2017', 'Vinho', '123456788');
-insert into produto values ('1234567891019', 'Cerveja Sagres 1L', '22-11-2017', 'Cerveja', '123456788');
-insert into produto values ('1234567891111', 'Cerveja SuperBock 1L', '22-11-2017', 'Cerveja', '123456788');
-insert into produto values ('1234567891112', 'Cerveja SuperBock Grade', '22-11-2017', 'Cerveja', '123456788');
-insert into produto values ('1234567891113', 'Eristoff Branca', '22-11-2017', 'Vodka', '123456788');
-insert into produto values ('1234567891114', 'Eristoff Preta', '22-11-2017', 'Vodka', '123456788');
-insert into produto values ('1234567891115', 'Jack Daniels', '22-11-2017', 'Whisky', '123456788');
-insert into produto values ('1234567891116', 'Captain Morgan', '22-11-2017', 'Rum', '123456788');
-insert into produto values ('1234567891117', 'Bacardi', '22-11-2017', 'Rum', '123456788');
-insert into produto values ('1234567891118', 'Garafao Luso', '22-11-2017', 'Agua', '123456787');
-insert into produto values ('1234567891119', 'Serra da Estrela 330mil', '22-11-2017', 'Agua', '123456787');
-insert into produto values ('1234567891211', 'Leite Mimosa Pack 6 1L', '22-11-2017', 'Leite', '123456786');
-insert into produto values ('1234567891212', 'Matinal Magro 1L', '22-11-2017', 'Leite', '123456786');
-insert into produto values ('1234567891213', 'Dourada do Mar', '22-11-2017', 'Fresco', '123456785');
-insert into produto values ('1234567891214', 'Sardinhas', '22-11-2017', 'Fresco', '123456785');
-insert into produto values ('1234567891215', 'Salmao Congelado', '22-11-2017', 'Congelado', '123456785');
-insert into produto values ('1234567891216', 'Douradinhos Congelados', '22-11-2017', 'Congelado', '123456785');
-insert into produto values ('1234567891217', 'Peito de Frango', '22-11-2017', 'Talho', '123456784');
-insert into produto values ('1234567891218', 'Borrego', '22-11-2017', 'Talho', '123456784');
-insert into produto values ('1234567891219', 'Costeletas de Porco', '22-11-2017', 'Talho', '123456784');
-insert into produto values ('1234567891311', 'Hamburguer de Vaca', '22-11-2017', 'Empacotada', '123456784');
-insert into produto values ('1234567891312', 'Carne Picada', '22-11-2017', 'Empacotada', '123456784');
-insert into produto values ('1234567891313', 'Ursinhos', '22-11-2017', 'Gomas', '123456783');
-insert into produto values ('1234567891314', 'Tubaroes', '22-11-2017', 'Gomas', '123456783');
-insert into produto values ('1234567891315', 'Ovos Estrelados', '22-11-2017', 'Gomas', '123456783');
-insert into produto values ('1234567891316', 'Sal Fino', '22-11-2017', 'Sal', '123456783');
-insert into produto values ('1234567891317', 'Guardanapos plus Renova', '22-11-2017', 'Guardanapos', '123456783');
-insert into produto values ('1234567891318', 'Special K integral', '22-11-2017', 'Cereais', '123456782');
-insert into produto values ('1234567891319', 'Estrelitas', '22-11-2017', 'Cereais', '123456782');
-insert into produto values ('1234567891411', 'Cornflakes', '22-11-2017', 'Cereais', '123456782');
-insert into produto values ('1234567891412', 'Milka de Leite', '22-11-2017', 'Chocolates', '123456782');
-insert into produto values ('1234567891413', 'Toblerone', '22-11-2017', 'Chocolates', '123456782');
-insert into produto values ('1234567891414', 'Mars', '22-11-2017', 'Chocolates', '123456782');
-insert into produto values ('1234567891415', 'Iogurte Grego Natural', '22-11-2017', 'Iogurtes', '123456781');
-insert into produto values ('1234567891416', 'Iogurte Grego Acucarado', '22-11-2017', 'Iogurtes', '123456781');
-insert into produto values ('1234567891417', 'Actimel', '22-11-2017', 'Iogurtes', '123456780');
-insert into produto values ('1234567891418', 'Trident de Morango', '22-11-2017', 'Pasta de Dentes', '123456780');
-insert into produto values ('1234567891419', 'Colgate Sensitive Pro-Activo', '22-11-2017', 'Pasta de Dentes', '123456780');
-insert into produto values ('1234567891511', 'Escova Electrica', '22-11-2017', 'Escovas de Dentes', '123456780');
-insert into produto values ('1234567891512', 'Escova Simples', '22-11-2017', 'Escovas de Dentes', '123456780');
-insert into produto values ('1234567891513', 'Pack 5 Escovas Simples', '22-11-2017', 'Escovas de Dentes', '123456780');
--- insert into produto values ('1234567891514', 'Lays Gourmet', '22-11-2017', 'Comidas', '123456783');
+insert into produto values ('1234567891011', 'cola pleb', '2017-11-22', 'Coca-Cola', '123456789'); --ean, design, data, nome categoria, fornecedorP_nif
+insert into produto values ('1234567891012', 'Coca-Cola OG', '2017-11-22', 'Coca-Cola', '123456789');
+insert into produto values ('1234567891013', 'Ice Tea Pessego', '2017-11-22', 'Ice Tea', '123456789');
+insert into produto values ('1234567891014', 'Ice Tea Limao', '2017-11-22', 'Ice Tea', '123456789');
+insert into produto values ('1234567891015', 'sprite pleb', '2017-11-22', 'Sprite', '123456789');
+insert into produto values ('1234567891016', 'Sprite', '2017-11-22', 'Sprite', '123456789');
+insert into produto values ('1234567891017', 'Casal Garcia', '2017-11-22', 'Vinho', '123456788');
+insert into produto values ('1234567891018', 'Vinho do Porto', '2017-11-22', 'Vinho', '123456788');
+insert into produto values ('1234567891019', 'Cerveja Sagres 1L', '2017-11-22', 'Cerveja', '123456788');
+insert into produto values ('1234567891111', 'Cerveja SuperBock 1L', '2017-11-22', 'Cerveja', '123456788');
+insert into produto values ('1234567891112', 'Cerveja SuperBock Grade', '2017-11-22', 'Cerveja', '123456788');
+insert into produto values ('1234567891113', 'Eristoff Branca', '2017-11-22', 'Vodka', '123456788');
+insert into produto values ('1234567891114', 'Eristoff Preta', '2017-11-22', 'Vodka', '123456788');
+insert into produto values ('1234567891115', 'Jack Daniels', '2017-11-22', 'Whisky', '123456788');
+insert into produto values ('1234567891116', 'Captain Morgan', '2017-11-22', 'Rum', '123456788');
+insert into produto values ('1234567891117', 'Bacardi', '2017-11-22', 'Rum', '123456788');
+insert into produto values ('1234567891118', 'Garafao Luso', '2017-11-22', 'Agua', '123456787');
+insert into produto values ('1234567891119', 'Serra da Estrela 330mil', '2017-11-22', 'Agua', '123456787');
+insert into produto values ('1234567891211', 'Leite Mimosa Pack 6 1L', '2017-11-22', 'Leite', '123456786');
+insert into produto values ('1234567891212', 'Matinal Magro 1L', '2017-11-22', 'Leite', '123456786');
+insert into produto values ('1234567891213', 'Dourada do Mar', '2017-11-22', 'Fresco', '123456785');
+insert into produto values ('1234567891214', 'Sardinhas', '2017-11-22', 'Fresco', '123456785');
+insert into produto values ('1234567891215', 'Salmao Congelado', '2017-11-22', 'Congelado', '123456785');
+insert into produto values ('1234567891216', 'Douradinhos Congelados', '2017-11-22', 'Congelado', '123456785');
+insert into produto values ('1234567891217', 'Peito de Frango', '2017-11-22', 'Talho', '123456784');
+insert into produto values ('1234567891218', 'Borrego', '2017-11-22', 'Talho', '123456784');
+insert into produto values ('1234567891219', 'Costeletas de Porco', '2017-11-22', 'Talho', '123456784');
+insert into produto values ('1234567891311', 'Hamburguer de Vaca', '2017-11-22', 'Empacotada', '123456784');
+insert into produto values ('1234567891312', 'Carne Picada', '2017-11-22', 'Empacotada', '123456784');
+insert into produto values ('1234567891313', 'Ursinhos', '2017-11-22', 'Gomas', '123456783');
+insert into produto values ('1234567891314', 'Tubaroes', '2017-11-22', 'Gomas', '123456783');
+insert into produto values ('1234567891315', 'Ovos Estrelados', '2017-11-22', 'Gomas', '123456783');
+insert into produto values ('1234567891316', 'Sal Fino', '2017-11-22', 'Sal', '123456783');
+insert into produto values ('1234567891317', 'Guardanapos plus Renova', '2017-11-22', 'Guardanapos', '123456783');
+insert into produto values ('1234567891318', 'Special K integral', '2017-11-22', 'Cereais', '123456782');
+insert into produto values ('1234567891319', 'Estrelitas', '2017-11-22', 'Cereais', '123456782');
+insert into produto values ('1234567891411', 'Cornflakes', '2017-11-22', 'Cereais', '123456782');
+insert into produto values ('1234567891412', 'Milka de Leite', '2017-11-22', 'Chocolates', '123456782');
+insert into produto values ('1234567891413', 'Toblerone', '2017-11-22', 'Chocolates', '123456782');
+insert into produto values ('1234567891414', 'Mars', '2017-11-22', 'Chocolates', '123456782');
+insert into produto values ('1234567891415', 'Iogurte Grego Natural', '2017-11-22', 'Iogurtes', '123456781');
+insert into produto values ('1234567891416', 'Iogurte Grego Acucarado', '2017-11-22', 'Iogurtes', '123456781');
+insert into produto values ('1234567891417', 'Actimel', '2017-11-22', 'Iogurtes', '123456780');
+insert into produto values ('1234567891418', 'Trident de Morango', '2017-11-22', 'Pasta de Dentes', '123456780');
+insert into produto values ('1234567891419', 'Colgate Sensitive Pro-Activo', '2017-11-22', 'Pasta de Dentes', '123456780');
+insert into produto values ('1234567891511', 'Escova Electrica', '2017-11-22', 'Escovas de Dentes', '123456780');
+insert into produto values ('1234567891512', 'Escova Simples', '2017-11-22', 'Escovas de Dentes', '123456780');
+insert into produto values ('1234567891513', 'Pack 5 Escovas Simples', '2017-11-22', 'Escovas de Dentes', '123456780');
+-- insert into produto values ('1234567891514', 'Lays Gourmet', '2017-11-22', 'Comidas', '123456783');
 
 insert into fornecedor_sec values ('123456780', '1234567891011');  -- nif, ean
 insert into fornecedor_sec values ('123456780', '1234567891012');
