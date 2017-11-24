@@ -15,10 +15,10 @@
 
                 $db->query("start transaction;");
 
-                $sql = "DELETE FROM categoria WHERE categoria_name='$categoria_name';";
-                $sql = "DELETE FROM super_categoria WHERE super_categoria_name ='$categoria_name';";
                 $sql = "DELETE FROM constituida WHERE super_categoria_name ='$categoria_name';";
-
+                $sql = "DELETE FROM super_categoria WHERE super_categoria_name ='$categoria_name';";
+                $sql = "DELETE FROM categoria WHERE categoria_name='$categoria_name';";
+                
                 $db->query($sql);
 
                 echo("<p>$sql</p>");
