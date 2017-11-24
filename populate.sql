@@ -3,22 +3,24 @@
 ----------------------------------------
 
 insert into categoria values ('Refrigerantes');       --super_categoria
-insert into categoria values ('Coca-Cola');           --sub
-insert into categoria values ('Ice Tea');             --sub
-insert into categoria values ('Sprite');              --sub
+insert into categoria values ('Coca-Cola');           --sub (simples)
+insert into categoria values ('Ice Tea');             --sub (simples)
+insert into categoria values ('Sprite');              --sub (simples)
 insert into categoria values ('Bebidas Alcoolicas');  --super_categoria
-insert into categoria values ('Vinho');               --sub
-insert into categoria values ('Cerveja');             --sub
-insert into categoria values ('Vodka');               --sub
-insert into categoria values ('Whisky');              --sub
-insert into categoria values ('Rum');                 --sub
+insert into categoria values ('Vinho');               --sub (simples)
+insert into categoria values ('Cerveja');             --sub (simples)
+insert into categoria values ('Vodka');               --sub (simples)
+insert into categoria values ('Whisky');              --sub (simples)
+insert into categoria values ('Rum');                 --sub (simples)
 insert into categoria values ('Agua');                --simples
 insert into categoria values ('Leite');               --simples
 insert into categoria values ('Comidas');             --super_categoria
-insert into categoria values ('Peixe Fresco');        --sub
-insert into categoria values ('Peixe Congelado');     --sub
-insert into categoria values ('Carne do Talho');      --sub
-insert into categoria values ('Carne Empacotada');    --sub
+insert into categoria values ('Peixe');               --sub (super)
+insert into categoria values ('Congelado');           --sub (simples)
+insert into categoria values ('Fresco');              --sub (simples)
+insert into categoria values ('Carne');               --sub (super)
+insert into categoria values ('Talho');               --sub (simples)
+insert into categoria values ('Empacotado');          --sub (simples)
 insert into categoria values ('Gomas');               --simples
 insert into categoria values ('Sal');                 --simples
 insert into categoria values ('Guardanapos');         --simples
@@ -28,6 +30,18 @@ insert into categoria values ('Iogurtes');            --simples
 insert into categoria values ('Pasta de Dentes');     --simples
 insert into categoria values ('Escovas de Dentes');   --simples
 
+insert into categoria_simples values ('Coca-Cola');
+insert into categoria_simples values ('Ice Tea');
+insert into categoria_simples values ('Sprite');
+insert into categoria_simples values ('Vinho');
+insert into categoria_simples values ('Cerveja');
+insert into categoria_simples values ('Vodka');
+insert into categoria_simples values ('Whisky');
+insert into categoria_simples values ('Rum');
+insert into categoria_simples values ('Congelado');
+insert into categoria_simples values ('Fresco');
+insert into categoria_simples values ('Talho');
+insert into categoria_simples values ('Empacotado');
 insert into categoria_simples values ('Gomas');
 insert into categoria_simples values ('Sal');
 insert into categoria_simples values ('Guardanapos');
@@ -42,6 +56,8 @@ insert into categoria_simples values ('Leite');
 insert into super_categoria values ('Refrigerantes');
 insert into super_categoria values ('Bebidas Alcoolicas');
 insert into super_categoria values ('Comidas');
+insert into super_categoria values ('Carne');
+insert into super_categoria values ('Peixe');
 
 insert into constituida values ('Refrigerantes', 'Coca-Cola');    --super_categoria, sub
 insert into constituida values ('Refrigerantes', 'Ice Tea');
@@ -51,10 +67,14 @@ insert into constituida values ('Bebidas Alcoolicas', 'Cerveja');
 insert into constituida values ('Bebidas Alcoolicas', 'Vodka');
 insert into constituida values ('Bebidas Alcoolicas', 'Whisky');
 insert into constituida values ('Bebidas Alcoolicas', 'Rum');
-insert into constituida values ('Comidas', 'Peixe Fresco');
-insert into constituida values ('Comidas', 'Peixe Congelado');
-insert into constituida values ('Comidas', 'Carne do Talho');
-insert into constituida values ('Comidas', 'Carne Empacotada');
+insert into constituida values ('Comidas', 'Peixe');
+insert into constituida values ('Comidas', 'Peixe');
+insert into constituida values ('Peixe', 'Congelado');
+insert into constituida values ('Peixe', 'Fresco');
+insert into constituida values ('Comidas', 'Carne');
+insert into constituida values ('Comidas', 'Carne');
+insert into constituida values ('Carne', 'Empacotada');
+insert into constituida values ('Carne', 'Talho');
 
 insert into fornecedor values ('123456789', 'Forn_9');      --nif, nome
 insert into fornecedor values ('123456788', 'Forn_8');
@@ -87,15 +107,15 @@ insert into produto values ('1234567891118', 'Garafao Luso', '2017-11-22', 'Agua
 insert into produto values ('1234567891119', 'Serra da Estrela 330mil', '2017-11-22', 'Agua', '123456787');
 insert into produto values ('1234567891211', 'Leite Mimosa Pack 6 1L', '2017-11-22', 'Leite', '123456786');
 insert into produto values ('1234567891212', 'Matinal Magro 1L', '2017-11-22', 'Leite', '123456786');
-insert into produto values ('1234567891213', 'Dourada do Mar', '2017-11-22', 'Peixe Fresco', '123456785');
-insert into produto values ('1234567891214', 'Sardinhas', '2017-11-22', 'Peixe Fresco', '123456785');
-insert into produto values ('1234567891215', 'Salmao Congelado', '2017-11-22', 'Peixe Congelado', '123456785');
-insert into produto values ('1234567891216', 'Douradinhos Congelados', '2017-11-22', 'Peixe Congelado', '123456785');
-insert into produto values ('1234567891217', 'Peito de Frango', '2017-11-22', 'Carne do Talho', '123456784');
-insert into produto values ('1234567891218', 'Borrego', '2017-11-22', 'Carne do Talho', '123456784');
-insert into produto values ('1234567891219', 'Costeletas de Porco', '2017-11-22', 'Carne do Talho', '123456784');
-insert into produto values ('1234567891311', 'Hamburguer de Vaca', '2017-11-22', 'Carne Empacotada', '123456784');
-insert into produto values ('1234567891312', 'Carne Picada', '2017-11-22', 'Carne Empacotada', '123456784');
+insert into produto values ('1234567891213', 'Dourada do Mar', '2017-11-22', 'Fresco', '123456785');
+insert into produto values ('1234567891214', 'Sardinhas', '2017-11-22', 'Fresco', '123456785');
+insert into produto values ('1234567891215', 'Salmao Congelado', '2017-11-22', 'Congelado', '123456785');
+insert into produto values ('1234567891216', 'Douradinhos Congelados', '2017-11-22', 'Congelado', '123456785');
+insert into produto values ('1234567891217', 'Peito de Frango', '2017-11-22', 'Talho', '123456784');
+insert into produto values ('1234567891218', 'Borrego', '2017-11-22', 'Talho', '123456784');
+insert into produto values ('1234567891219', 'Costeletas de Porco', '2017-11-22', 'Talho', '123456784');
+insert into produto values ('1234567891311', 'Hamburguer de Vaca', '2017-11-22', 'Empacotada', '123456784');
+insert into produto values ('1234567891312', 'Carne Picada', '2017-11-22', 'Empacotada', '123456784');
 insert into produto values ('1234567891313', 'Ursinhos', '2017-11-22', 'Gomas', '123456783');
 insert into produto values ('1234567891314', 'Tubaroes', '2017-11-22', 'Gomas', '123456783');
 insert into produto values ('1234567891315', 'Ovos Estrelados', '2017-11-22', 'Gomas', '123456783');
@@ -115,3 +135,56 @@ insert into produto values ('1234567891419', 'Colgate Sensitive Pro-Activo', '20
 insert into produto values ('1234567891511', 'Escova Electrica', '2017-11-22', 'Escovas de Dentes', '123456780');
 insert into produto values ('1234567891512', 'Escova Simples', '2017-11-22', 'Escovas de Dentes', '123456780');
 insert into produto values ('1234567891513', 'Pack 5 Escovas Simples', '2017-11-22', 'Escovas de Dentes', '123456780');
+-- insert into produto values ('1234567891514', 'Lays Gourmet', '2017-11-22', 'Comidas', '123456783');
+
+insert into fornecedor_sec values ('123456780', '1234567891011');  -- nif, ean
+insert into fornecedor_sec values ('123456780', '1234567891012');
+insert into fornecedor_sec values ('123456780', '1234567891013');
+insert into fornecedor_sec values ('123456780', '1234567891014');
+insert into fornecedor_sec values ('123456780', '1234567891015');
+insert into fornecedor_sec values ('123456780', '1234567891016');
+insert into fornecedor_sec values ('123456781', '1234567891017');
+insert into fornecedor_sec values ('123456781', '1234567891018');
+insert into fornecedor_sec values ('123456781', '1234567891019');
+insert into fornecedor_sec values ('123456781', '1234567891111');
+insert into fornecedor_sec values ('123456781', '1234567891112');
+insert into fornecedor_sec values ('123456781', '1234567891113');
+insert into fornecedor_sec values ('123456781', '1234567891114');
+insert into fornecedor_sec values ('123456781', '1234567891115');
+insert into fornecedor_sec values ('123456781', '1234567891116');
+insert into fornecedor_sec values ('123456781', '1234567891117');
+insert into fornecedor_sec values ('123456782', '1234567891118');
+insert into fornecedor_sec values ('123456782', '1234567891119');
+insert into fornecedor_sec values ('123456783', '1234567891211');
+insert into fornecedor_sec values ('123456783', '1234567891212');
+insert into fornecedor_sec values ('123456784', '1234567891213');
+insert into fornecedor_sec values ('123456784', '1234567891214');
+insert into fornecedor_sec values ('123456784', '1234567891215');
+insert into fornecedor_sec values ('123456784', '1234567891216');
+insert into fornecedor_sec values ('123456785', '1234567891217');
+insert into fornecedor_sec values ('123456785', '1234567891218');
+insert into fornecedor_sec values ('123456785', '1234567891219');
+insert into fornecedor_sec values ('123456785', '1234567891311');
+insert into fornecedor_sec values ('123456785', '1234567891312');
+insert into fornecedor_sec values ('123456786', '1234567891313');
+insert into fornecedor_sec values ('123456786', '1234567891314');
+insert into fornecedor_sec values ('123456786', '1234567891315');
+insert into fornecedor_sec values ('123456786', '1234567891316');
+insert into fornecedor_sec values ('123456786', '1234567891317');
+insert into fornecedor_sec values ('123456787', '1234567891318');
+insert into fornecedor_sec values ('123456787', '1234567891319');
+insert into fornecedor_sec values ('123456787', '1234567891411');
+insert into fornecedor_sec values ('123456787', '1234567891412');
+insert into fornecedor_sec values ('123456787', '1234567891413');
+insert into fornecedor_sec values ('123456787', '1234567891414');
+insert into fornecedor_sec values ('123456788', '1234567891415');
+insert into fornecedor_sec values ('123456788', '1234567891416');
+insert into fornecedor_sec values ('123456789', '1234567891417');
+insert into fornecedor_sec values ('123456789', '1234567891418');
+insert into fornecedor_sec values ('123456789', '1234567891419');
+insert into fornecedor_sec values ('123456789', '1234567891511');
+insert into fornecedor_sec values ('123456789', '1234567891512');
+insert into fornecedor_sec values ('123456789', '1234567891513');
+-- insert into fornecedor_sec values ('123456786', '1234567891514');
+
+insert into corredor values (); --
