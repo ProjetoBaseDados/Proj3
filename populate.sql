@@ -187,4 +187,66 @@ insert into fornecedor_sec values ('123456789', '1234567891512');
 insert into fornecedor_sec values ('123456789', '1234567891513');
 -- insert into fornecedor_sec values ('123456786', '1234567891514');
 
-insert into corredor values (); --
+insert into corredor values (1, 20);      -- nro_corredor, largura
+insert into corredor values (2, 15);
+insert into corredor values (3, 10);
+
+insert into prateleira values (1, 'esquerdo', 'chao');       -- nro_corredor, lado, altura
+insert into prateleira values (1, 'esquerdo', 'medio');
+insert into prateleira values (1, 'esquerdo', 'superior');
+insert into prateleira values (1, 'direito', 'chao');
+insert into prateleira values (1, 'direito', 'medio');
+insert into prateleira values (1, 'direito', 'superior');
+insert into prateleira values (2, 'esquerdo', 'chao');
+insert into prateleira values (2, 'esquerdo', 'medio');
+insert into prateleira values (2, 'esquerdo', 'superior');
+insert into prateleira values (2, 'direito', 'chao');
+insert into prateleira values (2, 'direito', 'medio');
+insert into prateleira values (2, 'direito', 'superior');
+insert into prateleira values (3, 'esquerdo', 'chao');
+insert into prateleira values (3, 'esquerdo', 'medio');
+insert into prateleira values (3, 'esquerdo', 'superior');
+insert into prateleira values (3, 'direito', 'chao');
+insert into prateleira values (3, 'direito', 'medio');
+insert into prateleira values (3, 'direito', 'superior');
+
+insert into planograma values ('1234567891111', 1, 'esquerdo', 'chao',);        -- ean, nro_corredor, lado, altura, numero de frentes de produtos visiveis, unidades_max, localizaçao
+insert into planograma values ('1234567891112', 1, 'esquerdo', 'chao',);
+insert into planograma values ('1234567891113', 1, 'esquerdo', 'chao',);
+insert into planograma values ('1234567891114', 1, 'esquerdo', 'medio',);
+insert into planograma values ('1234567891115', 1, 'esquerdo', 'medio',);
+insert into planograma values ('1234567891116', 1, 'esquerdo', 'superior',);
+insert into planograma values ('1234567891117', 1, 'esquerdo', 'superior',);
+insert into planograma values ('1234567891118', 1, 'esquerdo', 'superior',);
+insert into planograma values ('1234567891119', 1, 'direito', 'chao',);
+insert into planograma values ('1234567891211', 1, 'direito', 'chao',);
+insert into planograma values ('1234567891212', 1, 'direito', 'chao',);
+insert into planograma values ('1234567891213', 1, 'direito', 'medio',);
+insert into planograma values ('1234567891214', 1, 'direito', 'medio',);
+insert into planograma values ('1234567891215', 1, 'direito', 'medio',);
+insert into planograma values ('1234567891216', 1, 'direito', 'superior',);
+insert into planograma values ('1234567891217', 1, 'direito', 'superior',);
+insert into planograma values ('1234567891218', 2, 'esquerdo', 'superior',);
+insert into planograma values ('1234567891219', 2, 'esquerdo', 'superior',);
+insert into planograma values ('1234567891311', 2, 'esquerdo', 'medio',);
+insert into planograma values ('1234567891312', 2, 'esquerdo', 'medio',);
+insert into planograma values ('1234567891313', 2, 'esquerdo', 'chao',);
+insert into planograma values ('1234567891314', 2, 'esquerdo', 'chao',);
+insert into planograma values ('1234567891315', 2, 'esquerdo', 'chao',);
+insert into planograma values ('1234567891316', 2, 'direito', 'superior',);
+insert into planograma values ('1234567891317', 2, 'direito', 'superior',);
+insert into planograma values ('1234567891318', 2, 'direito', 'medio',);
+insert into planograma values ('1234567891319', 2, 'direito', 'medio',);
+insert into planograma values ('1234567891411', 2, 'direito', 'chao',);
+insert into planograma values ('1234567891412', 2, 'direito', 'chao',);
+insert into planograma values ('1234567891413', 2, 'direito', 'chao',);
+insert into planograma values ('1234567891414', 3, 'esquerdo', 'chao',);
+insert into planograma values ('1234567891415', 3, 'esquerdo', 'chao',);
+insert into planograma values ('1234567891416', 3, 'esquerdo', 'medio',);
+insert into planograma values ('1234567891417', 3, 'esquerdo', 'medio',);
+insert into planograma values ('1234567891418', 3, 'esquerdo', 'superior',);
+insert into planograma values ('1234567891419', 3, 'direito', 'chao',);
+insert into planograma values ('1234567891511', 3, 'direito', 'chao',);
+insert into planograma values ('1234567891512', 3, 'direito', 'medio',);
+insert into planograma values ('1234567891513', 3, 'direito', 'superior',);
+-- insert into planograma values ('1234567891514', 3, 'direito', 'superior',);

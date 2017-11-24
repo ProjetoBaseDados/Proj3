@@ -75,7 +75,7 @@ create table planograma
   planograma_nro int not null unique,
   planograma_lado varchar(80) not null unique,
   planograma_altura int not null unique,
-  face varchar(80) not null,
+  face int not null,
   unidades int not null,
   loc varchar(80) not null,
   constraint pk_planograma primary key(planograma_altura, planograma_ean, planograma_nro, planograma_lado),
