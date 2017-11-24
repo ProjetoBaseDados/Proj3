@@ -54,7 +54,7 @@ insert into constituida values ('Bebidas Alcoolicas', 'Rum');
 insert into constituida values ('Comidas', 'Peixe Fresco');
 insert into constituida values ('Comidas', 'Peixe Congelado');
 insert into constituida values ('Comidas', 'Carne do Talho');
-insert into constituida values ('Comidas', 'Carne empacotada');
+insert into constituida values ('Comidas', 'Carne Empacotada');
 
 insert into fornecedor values ('123456789', 'Forn_9');      --nif, nome
 insert into fornecedor values ('123456788', 'Forn_8');
@@ -109,9 +109,9 @@ insert into produto values ('1234567891413', 'Toblerone', '2017-11-22', 'Chocola
 insert into produto values ('1234567891414', 'Mars', '2017-11-22', 'Chocolates', '123456782');
 insert into produto values ('1234567891415', 'Iogurte Grego Natural', '2017-11-22', 'Iogurtes', '123456781');
 insert into produto values ('1234567891416', 'Iogurte Grego Acucarado', '2017-11-22', 'Iogurtes', '123456781');
-insert into produto values ('1234567891417', 'Actimel', '2017-11-22', 'Iogurtes', '123456781', '123456780');
+insert into produto values ('1234567891417', 'Actimel', '2017-11-22', 'Iogurtes', '123456780');
 insert into produto values ('1234567891418', 'Trident de Morango', '2017-11-22', 'Pasta de Dentes', '123456780');
 insert into produto values ('1234567891419', 'Colgate Sensitive Pro-Activo', '2017-11-22', 'Pasta de Dentes', '123456780');
-insert into produto values ('1234567891511', 'Escova Electrica', '2017-11-22', 'Escova de Dentes', '123456780');
-insert into produto values ('1234567891412', 'Escova Simples', '2017-11-22', 'Escova de Dentes', '123456780');
-insert into produto values ('1234567891413', 'Pack 5 Escovas Simples', '2017-11-22', 'Escova de Dentes', '123456780');
+insert into produto values ('1234567891511', 'Escova Electrica', '2017-11-22', 'Escovas de Dentes', '123456780');
+insert into produto values ('1234567891412', 'Escova Simples', '2017-11-22', 'Escovas de Dentes', '123456780');
+insert into produto values ('1234567891413', 'Pack 5 Escovas Simples', '2017-11-22', 'Escovas de Dentes', '123456780');
