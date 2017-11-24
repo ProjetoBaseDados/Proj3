@@ -16,23 +16,27 @@
         * a)
         */
         echo("<a href=\"insert_categories.php\">Insert categories or sub-categories</a>");
-        echo("<a href=\"remove_categories.php\">Remove categories or sub-categories</a>");
+        echo("<tr>\n");
        /*
         * b)
         */
         echo("<a href=\"insert_products.php\">Insert/remove products</a>");
+        echo("<tr>\n");
        /*
         * c)
         */
         echo("<a href=\"list_reposition_events.php\">List reposition events</a>");
+        echo("<tr>\n");
         /*
         * d)
         */
         echo("<a href=\"change_designation.php\">Change designation</a>");
+        echo("<tr>\n");
         /*
         * e)
         */
         echo("<a href=\"list_sub-categories.php\">List sub-categories of super-category</a>");
+        echo("<tr>\n");
 
         $sql = "SELECT * FROM categoria;";
 
@@ -42,10 +46,7 @@
         foreach($result as $row)
         {
             echo("<tr>\n");
-            echo("<td>{$row['account_number']}</td>\n");
-            echo("<td>{$row['branch_name']}</td>\n");
-            echo("<td>{$row['balance']}</td>\n");
-            echo("<td><a href=\"balance.php?account_number={$row['account_number']}\">Change balance</a></td>\n");
+            echo("<td>{$row['categoria_name']}</td>\n");
             echo("</tr>\n");
         }
         echo("</table>\n");
