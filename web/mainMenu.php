@@ -34,6 +34,22 @@
         */
         echo("<a href=\"list_sub-categories.php\">List sub-categories of super-category</a>");
 
+        $sql = "SELECT * FROM categoria;";
+
+        $result = $db->query($sql);
+
+        echo("<table border=\"0\" cellspacing=\"5\">\n");
+        foreach($result as $row)
+        {
+            echo("<tr>\n");
+            echo("<td>{$row['account_number']}</td>\n");
+            echo("<td>{$row['branch_name']}</td>\n");
+            echo("<td>{$row['balance']}</td>\n");
+            echo("<td><a href=\"balance.php?account_number={$row['account_number']}\">Change balance</a></td>\n");
+            echo("</tr>\n");
+        }
+        echo("</table>\n");
+
         $db = null;
     }
     catch (PDOException $e)
