@@ -17,9 +17,6 @@
 
                 $sql = "DELETE FROM constituida WHERE sub_categoria_name ='$categoria_name';";
                 $sql = "DELETE FROM categoria_simples WHERE categoria_simples_name ='$categoria_name';";
-                $sql = "UPDATE produto SET produto_categoria_name = 'Outros' WHERE categoria_name = '$categoria_name';";
-
-                
                 $sql = "DELETE FROM categoria WHERE categoria_name='$categoria_name';";
 
                 $db->query($sql);

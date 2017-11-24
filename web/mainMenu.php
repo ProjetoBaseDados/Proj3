@@ -16,27 +16,27 @@
         * a)
         */
         echo("<a href=\"insert_categories.php\">Insert categories or sub-categories</a>");
-        echo("<td>\n");
+        echo("<tr>\n");
        /*
         * b)
         */
         echo("<a href=\"insert_products.php\">Insert/remove products</a>");
-        echo("<td>\n");
+        echo("<tr>\n");
        /*
         * c)
         */
         echo("<a href=\"list_reposition_events.php\">List reposition events</a>");
-        echo("<td>\n");
+        echo("<tr>\n");
         /*
         * d)
         */
         echo("<a href=\"change_designation.php\">Change designation</a>");
-        echo("<td>\n");
+        echo("<tr>\n");
         /*
         * e)
         */
         echo("<a href=\"list_sub-categories.php\">List sub-categories of super-category</a>");
-        echo("<td>\n");
+        echo("<tr>\n");
 
         $sql = "SELECT * FROM categoria;";
 
