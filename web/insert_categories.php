@@ -35,7 +35,7 @@
         {
             echo("<tr>\n");
             echo("<td>{$row['categoria_name']}</td>\n");
-            echo("<td><a href=\"insert_categories_Update.php?super_categoria_name={$row['super_categoria_name']}\">Remove</a></td>\n");
+            echo("<td><a href=\"insert_super_Update.php?super_categoria_name={$row['super_categoria_name']}\">Remove</a></td>\n");
             echo("</tr>\n");
         }
         echo("</table>\n");
