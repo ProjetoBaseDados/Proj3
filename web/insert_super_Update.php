@@ -1,8 +1,8 @@
 <html>
     <body>
-        <h3>Remover categoria <?=$_REQUEST['categoria_name']?>: Concluida</h3>
+        <h3>Remover categoria <?=$_REQUEST['super_categoria_name']?>: Concluida</h3>
         <?php
-        $categoria_name = $_REQUEST['categoria_name'];
+        $categoria_name = $_REQUEST['super_categoria_name'];
             try
             {
                 $host = "db.ist.utl.pt";
