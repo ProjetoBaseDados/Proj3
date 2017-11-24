@@ -1,15 +1,15 @@
-drop table categoria cascade;
-drop table categoria_simples cascade;
-drop table super_categoria cascade;
-drop table constituida cascade;
-drop table fornecedor cascade;
-drop table produto cascade;
-drop table fornecedor_sec cascade;
-drop table corredor cascade;
-drop table prateleira cascade;
-drop table planograma cascade;
-drop table reposicao cascade;
-drop table evento_reposicao cascade;
+drop table if exists categoria;
+drop table if exists categoria_simples;
+drop table if exists super_categoria;
+drop table if exists constituida;
+drop table if exists fornecedor;
+drop table if exists produto;
+drop table if exists fornecedor_sec;
+drop table if exists corredor;
+drop table if exists prateleira;
+drop table if exists planograma;
+drop table if exists reposicao;
+drop table if exists evento_reposicao;
 
 ----------------------------------------
 -- Table Creation
@@ -38,7 +38,7 @@ create table constituida
 
 create table fornecedor
   (fornecedor_nif char(9) not null unique,
-  fornecedor_name 	varchar(80)	not null,
+  fornecedor_name 	varchar(80)	not null unique,
   constraint pk_fornecedor primary key(fornecedor_name, fornecedor_nif));
 
 create table produto
@@ -52,29 +52,29 @@ create table produto
   constraint fk_produto_fornecedor foreign key(produto_forn_primario_nif) references fornecedor(fornecedor_nif));
 
 create table fornecedor_sec
-  (fornecedor_sec_nif char(9) not null unique,
-  fornecedor_sec_ean char(13) not null unique,
+  (fornecedor_sec_nif char(9) not null,
+  fornecedor_sec_ean char(13) not null,
   constraint pk_fornecedor_sec primary key(fornecedor_sec_nif, fornecedor_sec_ean),
   constraint fk_fornecedor_sec_fornecedor foreign key(fornecedor_sec_nif) references fornecedor(fornecedor_nif),
   constraint fk_fornecedor_sec_produto foreign key(fornecedor_sec_ean) references produto(produto_ean));
 
 create table corredor
-  (corredor_nro int not null unique,
+  (corredor_nro int not null,
   corredor_largura int not null,
   constraint pk_corredor primary key(corredor_nro));
 
 create table prateleira
-  (prateleira_nro int not null unique,
-  prateleira_lado varchar(80) not null unique,
-  prateleira_altura int not null unique,
+  (prateleira_nro int not null,
+  prateleira_lado varchar(80) not null,
+  prateleira_altura varchar(10) not null,
   constraint pk_prateleira primary key(prateleira_nro, prateleira_lado, prateleira_altura),
   constraint fk_prateleira_corredor foreign key(prateleira_nro) references corredor(corredor_nro));
 
 create table planograma
   (planograma_ean char(13) not null unique,
-  planograma_nro int not null unique,
-  planograma_lado varchar(80) not null unique,
-  planograma_altura int not null unique,
+  planograma_nro int not null,
+  planograma_lado varchar(80) not null,
+  planograma_altura varchar not null,
   face int not null,
   unidades int not null,
   loc varchar(80) not null,
@@ -84,17 +84,17 @@ create table planograma
   references prateleira(prateleira_nro, prateleira_lado, prateleira_altura));
 
 create table evento_reposicao
-  (operador varchar(80) not null unique,
-  instante datetime not null unique,
+  (operador varchar(80) not null,
+  instante datetime not null,
   constraint pk_evento_reposicao primary key(operador, instante));
 
 create table reposicao
   (reposicao_ean char(13) not null unique,
-  reposicao_nro int not null unique,
-  reposicao_lado varchar(80) not null unique,
-  reposicao_altura int not null unique,
-  reposicao_operador varchar(80) not null unique,
-  reposicao_instante datetime not null unique,
+  reposicao_nro int not null,
+  reposicao_lado varchar(80) not null,
+  reposicao_altura varchar(10) not null,
+  reposicao_operador varchar(80) not null,
+  reposicao_instante datetime not null,
   reposicao_unidades int not null,
   constraint pk_reposicao primary key(reposicao_altura, reposicao_ean, reposicao_nro, reposicao_lado, reposicao_operador, reposicao_instante),
   constraint fk_reposicao_event_repo foreign key(reposicao_operador, reposicao_instante) references evento_reposicao(operador, instante),
