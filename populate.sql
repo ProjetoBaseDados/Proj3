@@ -113,5 +113,5 @@ insert into produto values ('1234567891417', 'Actimel', '2017-11-22', 'Iogurtes'
 insert into produto values ('1234567891418', 'Trident de Morango', '2017-11-22', 'Pasta de Dentes', '123456780');
 insert into produto values ('1234567891419', 'Colgate Sensitive Pro-Activo', '2017-11-22', 'Pasta de Dentes', '123456780');
 insert into produto values ('1234567891511', 'Escova Electrica', '2017-11-22', 'Escovas de Dentes', '123456780');
-insert into produto values ('1234567891412', 'Escova Simples', '2017-11-22', 'Escovas de Dentes', '123456780');
-insert into produto values ('1234567891413', 'Pack 5 Escovas Simples', '2017-11-22', 'Escovas de Dentes', '123456780');
+insert into produto values ('1234567891512', 'Escova Simples', '2017-11-22', 'Escovas de Dentes', '123456780');
+insert into produto values ('1234567891513', 'Pack 5 Escovas Simples', '2017-11-22', 'Escovas de Dentes', '123456780');
