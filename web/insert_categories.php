@@ -1,6 +1,6 @@
 <html>
     <body>
-    <h3>Accounts</h3>
+    <h3>Categorias</h3>
 <?php
     try
     {
@@ -12,7 +12,21 @@
         $db = new PDO("pgsql:host=$host;dbname=$dbname", $user, $password);
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql = "SELECT categoria_name FROM categoria;";
+        $sql = "SELECT categoria_simples_name FROM categoria_simples;";
+
+        $result = $db->query($sql);
+
+        echo("<table border=\"0\" cellspacing=\"5\">\n");
+        foreach($result as $row)
+        {
+            echo("<tr>\n");
+            echo("<td>{$row['categoria_simples_name']}</td>\n");
+            echo("<td><a href=\"insert_simple_Update.php?categoria_simples_name={$row['categoria_simples_name']}\">Remove</a></td>\n");
+            echo("</tr>\n");
+        }
+        echo("</table>\n");
+
+        $sql = "SELECT super_categoria_name FROM super_categoria;";
 
         $result = $db->query($sql);
 
@@ -21,7 +35,7 @@
         {
             echo("<tr>\n");
             echo("<td>{$row['categoria_name']}</td>\n");
-            echo("<td><a href=\"insert_categories_Update.php?categoria_name={$row['categoria_name']}\">Remove</a></td>\n");
+            echo("<td><a href=\"insert_categories_Update.php?super_categoria_name={$row['super_categoria_name']}\">Remove</a></td>\n");
             echo("</tr>\n");
         }
         echo("</table>\n");
