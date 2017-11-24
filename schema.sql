@@ -1,15 +1,15 @@
-drop table if exists categoria;
-drop table if exists categoria_simples;
-drop table if exists super_categoria;
-drop table if exists constituida;
-drop table if exists fornecedor;
-drop table if exists produto;
-drop table if exists fornecedor_sec;
-drop table if exists corredor;
-drop table if exists prateleira;
-drop table if exists planograma;
-drop table if exists reposicao;
-drop table if exists evento_reposicao;
+drop table if exists categoria cascade;
+drop table if exists categoria_simples cascade;
+drop table if exists super_categoria cascade;
+drop table if exists constituida cascade;
+drop table if exists fornecedor cascade;
+drop table if exists produto cascade;
+drop table if exists fornecedor_sec cascade;
+drop table if exists corredor cascade;
+drop table if exists prateleira cascade;
+drop table if exists planograma cascade;
+drop table if exists reposicao cascade;
+drop table if exists evento_reposicao cascade;
 
 ----------------------------------------
 -- Table Creation
