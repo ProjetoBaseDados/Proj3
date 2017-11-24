@@ -85,7 +85,7 @@ create table planograma
 
 create table evento_reposicao
   (operador varchar(80) not null unique,
-  instante datetime not null unique,
+  instante timestamp not null unique,
   constraint pk_evento_reposicao primary key(operador, instante));
 
 create table reposicao
@@ -94,7 +94,7 @@ create table reposicao
   reposicao_lado varchar(80) not null unique,
   reposicao_altura int not null unique,
   reposicao_operador varchar(80) not null unique,
-  reposicao_instante datetime not null unique,
+  reposicao_instante timestamp not null unique,
   reposicao_unidades int not null,
   constraint pk_reposicao primary key(reposicao_altura, reposicao_ean, reposicao_nro, reposicao_lado, reposicao_operador, reposicao_instante),
   constraint fk_reposicao_event_repo foreign key(reposicao_operador, reposicao_instante) references evento_reposicao(operador, instante),
