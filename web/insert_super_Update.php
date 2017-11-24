@@ -24,7 +24,7 @@
                 $if = $db->query($sql1);
 
                 if ($if > 0) {
-
+                  
                 } else {
                   $sql = "UPDATE produto SET produto_categoria_name = 'Outros' WHERE categoria_name = '$categoria_name';";
                 }
