@@ -34,7 +34,7 @@
         foreach($result as $row)
         {
             echo("<tr>\n");
-            echo("<td>{$row['categoria_name']}</td>\n");
+            echo("<td>{$row['super_categoria_name']}</td>\n");
             echo("<td><a href=\"insert_super_Update.php?super_categoria_name={$row['super_categoria_name']}\">Remove</a></td>\n");
             echo("</tr>\n");
         }
