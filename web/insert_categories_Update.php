@@ -13,6 +13,8 @@
                 $db = new PDO("pgsql:host=$host;dbname=$dbname", $user, $password);
                 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+                $db->query("start transaction;");
+
                 $sql = "DELETE FROM categoria WHERE categoria_name='$categoria_name';";
 
                 $db->query($sql);
