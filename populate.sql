@@ -34,8 +34,8 @@ insert into categoria_simples values ('Guardanapos');
 insert into categoria_simples values ('Cereais');
 insert into categoria_simples values ('Chocolates');
 insert into categoria_simples values ('Iogurtes');
-insert into categoria_simples values ('Pasta de dentes');
-insert into categoria_simples values ('Escovas de dentes');
+insert into categoria_simples values ('Pasta de Dentes');
+insert into categoria_simples values ('Escovas de Dentes');
 insert into categoria_simples values ('Agua');
 insert into categoria_simples values ('Leite');
 
