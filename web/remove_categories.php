@@ -21,7 +21,7 @@
         {
             echo("<tr>\n");
             echo("<td>{$row['categoria_name']}</td>\n");
-            echo("<td><a href=\"insert_simple_Update.php?categoria_simples_name={$row['categoria_name']}\">Remove</a></td>\n");
+            echo("<td><a href=\"remove_simple_Update.php?categoria_simples_name={$row['categoria_name']}\">Remove</a></td>\n");
             echo("</tr>\n");
         }
         echo("</table>\n");
@@ -35,7 +35,7 @@
         {
             echo("<tr>\n");
             echo("<td>{$row['categoria_name']}</td>\n");
-            echo("<td><a href=\"insert_super_Update.php?super_categoria_name={$row['categoria_name']}\">Remove</a></td>\n");
+            echo("<td><a href=\"remove_super_Update.php?super_categoria_name={$row['categoria_name']}\">Remove</a></td>\n");
             echo("</tr>\n");
         }
         echo("</table>\n");
