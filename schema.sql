@@ -54,7 +54,7 @@ create table produto
 create table fornecedor_sec
   (fornecedor_nif char(9) not null,
   produto_ean char(13) not null,
-  constraint pk_fornecedor_sec primary key(fornecdor_name, produto_ean),
+  constraint pk_fornecedor_sec primary key(fornecedor_nif, produto_ean),
   constraint fk_fornecedor_sec_fornecedor foreign key(fornecedor_nif) references fornecedor(fornecedor_nif),
   constraint fk_fornecedor_sec_produto foreign key(produto_ean) references produto(produto_ean));
 
