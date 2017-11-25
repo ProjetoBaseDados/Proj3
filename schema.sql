@@ -60,7 +60,7 @@ create table fornecedor_sec
 
 create table corredor
   (corredor_nro int not null,
-  corredor_largura varchar(10) not null,
+  corredor_largura int not null,
   constraint pk_corredor primary key(corredor_nro));
 
 create table prateleira
