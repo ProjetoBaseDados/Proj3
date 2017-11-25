@@ -15,28 +15,23 @@
        /*
         * a)
         */
-        echo("<a href=\"insert_categories.php\">Insert categories or sub-categories</a>");
-        echo("<tr>\n");
+        echo("<a href=\"remove_categories.php\">Remove categories or sub-categories</a>\n");
        /*
         * b)
         */
-        echo("<a href=\"insert_products.php\">Insert/remove products</a>");
-        echo("<tr>\n");
+        echo("<a href=\"insert_products.php\">Insert/remove products</a>\n");
        /*
         * c)
         */
-        echo("<a href=\"list_reposition_events.php\">List reposition events</a>");
-        echo("<tr>\n");
+        echo("<a href=\"list_reposition_events.php\">List reposition events</a>\n");
         /*
         * d)
         */
-        echo("<a href=\"change_designation.php\">Change designation</a>");
-        echo("<tr>\n");
+        echo("<a href=\"change_designation.php\">Change designation</a>\n");
         /*
         * e)
         */
-        echo("<a href=\"list_sub-categories.php\">List sub-categories of super-category</a>");
-        echo("<tr>\n");
+        echo("<a href=\"list_sub-categories.php\">List sub-categories of super-category</a>\n");
 
         $sql = "SELECT * FROM categoria;";
 

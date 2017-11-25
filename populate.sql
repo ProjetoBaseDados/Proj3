@@ -29,6 +29,8 @@ insert into categoria values ('Chocolates');          --simples
 insert into categoria values ('Iogurtes');            --simples
 insert into categoria values ('Pasta de Dentes');     --simples
 insert into categoria values ('Escovas de Dentes');   --simples
+insert into categoria values ('Outros');   --simples
+
 
 insert into categoria_simples values ('Coca-Cola');
 insert into categoria_simples values ('Ice Tea');
@@ -52,6 +54,7 @@ insert into categoria_simples values ('Pasta de Dentes');
 insert into categoria_simples values ('Escovas de Dentes');
 insert into categoria_simples values ('Agua');
 insert into categoria_simples values ('Leite');
+insert into categoria_simples values ('Outros');
 
 insert into super_categoria values ('Refrigerantes');
 insert into super_categoria values ('Bebidas Alcoolicas');

@@ -12,7 +12,7 @@
         $db = new PDO("pgsql:host=$host;dbname=$dbname", $user, $password);
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql = "SELECT categoria_simples_name FROM categoria_simples;";
+        $sql = "SELECT categoria_name FROM categoria_simples;";
 
         $result = $db->query($sql);
 
@@ -20,13 +20,13 @@
         foreach($result as $row)
         {
             echo("<tr>\n");
-            echo("<td>{$row['categoria_simples_name']}</td>\n");
-            echo("<td><a href=\"insert_simple_Update.php?categoria_simples_name={$row['categoria_simples_name']}\">Remove</a></td>\n");
+            echo("<td>{$row['categoria_name']}</td>\n");
+            echo("<td><a href=\"insert_simple_Update.php?categoria_simples_name={$row['categoria_name']}\">Remove</a></td>\n");
             echo("</tr>\n");
         }
         echo("</table>\n");
 
-        $sql = "SELECT super_categoria_name FROM super_categoria;";
+        $sql = "SELECT categoria_name FROM super_categoria;";
 
         $result = $db->query($sql);
 
@@ -34,8 +34,8 @@
         foreach($result as $row)
         {
             echo("<tr>\n");
-            echo("<td>{$row['super_categoria_name']}</td>\n");
-            echo("<td><a href=\"insert_super_Update.php?super_categoria_name={$row['super_categoria_name']}\">Remove</a></td>\n");
+            echo("<td>{$row['categoria_name']}</td>\n");
+            echo("<td><a href=\"insert_super_Update.php?super_categoria_name={$row['categoria_name']}\">Remove</a></td>\n");
             echo("</tr>\n");
         }
         echo("</table>\n");
