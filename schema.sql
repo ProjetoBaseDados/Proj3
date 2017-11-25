@@ -31,14 +31,14 @@ create table super_categoria
 
 create table constituida
   (super_categoria_name 	varchar(80)	not null,
-  sub_categoria_name 	varchar(80)	not null,
+  sub_categoria_name 	varchar(80)	not null unique,
   constraint pk_constituida primary key(super_categoria_name, sub_categoria_name),
   constraint fk_constituida_super_categoria foreign key(super_categoria_name) references super_categoria(super_categoria_name),
   constraint fk_constituida_categoria foreign key(sub_categoria_name) references categoria(categoria_name));
 
 create table fornecedor
   (fornecedor_nif char(9) not null unique,
-  fornecedor_name 	varchar(80)	not null unique,
+  fornecedor_name 	varchar(80)	not null,
   constraint pk_fornecedor primary key(fornecedor_name, fornecedor_nif));
 
 create table produto
@@ -59,7 +59,7 @@ create table fornecedor_sec
   constraint fk_fornecedor_sec_produto foreign key(fornecedor_sec_ean) references produto(produto_ean));
 
 create table corredor
-  (corredor_nro int not null,
+  (corredor_nro int not null unique,
   corredor_largura int not null,
   constraint pk_corredor primary key(corredor_nro));
 
@@ -71,7 +71,7 @@ create table prateleira
   constraint fk_prateleira_corredor foreign key(prateleira_nro) references corredor(corredor_nro));
 
 create table planograma
-  (planograma_ean char(13) not null unique,
+  (planograma_ean char(13) not null,
   planograma_nro int not null,
   planograma_lado varchar(80) not null,
   planograma_altura varchar(10) not null,
@@ -89,7 +89,7 @@ create table evento_reposicao
   constraint pk_evento_reposicao primary key(operador, instante));
 
 create table reposicao
-  (reposicao_ean char(13) not null unique,
+  (reposicao_ean char(13) not null,
   reposicao_nro int not null,
   reposicao_lado varchar(80) not null,
   reposicao_altura varchar(10) not null,

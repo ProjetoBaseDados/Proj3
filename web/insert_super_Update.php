@@ -16,25 +16,22 @@
                 $db->query("start transaction;");
 
                 $sql = "DELETE FROM constituida WHERE super_categoria_name ='$categoria_name';";
-                $sql = "DELETE FROM super_categoria WHERE super_categoria_name ='$categoria_name';";
-
                 $db->query($sql);
 
                 $sql1 = "SELECT COUNT(sub_categoria_name) FROM constituida WHERE sub_categoria_name = '$categoria_name';";
                 $if = $db->query($sql1);
 
                 if ($if > 0) {
-                  
+                  $newCat = $db->query("SELECT super_categoria_name from constituida WHERE sub_categoria_name = '$categoria_name';");
+                  $sql = "UPDATE produto SET produto_categoria_name '$newCat'  WHERE categoria_name = '$categoria_name';";
                 } else {
                   $sql = "UPDATE produto SET produto_categoria_name = 'Outros' WHERE categoria_name = '$categoria_name';";
                 }
-
-                $sql = "UPDATE produto SET produto_categoria_name = $categoria_name WHERE categoria_name = '$categoria_name';";
-
-                /*UPDATE produto SET produto_categoria_name = 'Outros' WHERE categoria_name = '$categoria_name';";*/
-
+                $db->query($sql);
+                
+                $sql = "DELETE FROM super_categoria WHERE super_categoria_name ='$categoria_name';";
+                $db->query($sql);
                 $sql = "DELETE FROM categoria WHERE categoria_name='$categoria_name';";
-
                 $db->query($sql);
 
                 echo("<p>$sql</p>");
