@@ -60,7 +60,7 @@ create table fornecedor_sec
 
 create table corredor
   (corredor_nro int not null,
-  corredor_largura int not null,
+  corredor_largura varchar(10) not null,
   constraint pk_corredor primary key(corredor_nro));
 
 create table prateleira
@@ -74,7 +74,7 @@ create table planograma
   (planograma_ean char(13) not null unique,
   planograma_nro int not null,
   planograma_lado varchar(80) not null,
-  planograma_altura varchar not null,
+  planograma_altura varchar(10) not null,
   face int not null,
   unidades int not null,
   loc varchar(80) not null,
