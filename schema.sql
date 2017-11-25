@@ -33,7 +33,7 @@ create table constituida
   (super_categoria_name 	varchar(80)	not null,
   sub_categoria_name 	varchar(80)	not null unique,
   constraint pk_constituida primary key(super_categoria_name, sub_categoria_name),
-  constraint fk_constituida_super_categoria foreign key(super_categoria_name) references super_categoria(super_categoria_name),
+  constraint fk_constituida_super_categoria foreign key(super_categoria_name) references super_categoria(categoria_name),
   constraint fk_constituida_categoria foreign key(sub_categoria_name) references categoria(categoria_name));
 
 create table fornecedor
@@ -81,7 +81,7 @@ create table planograma
   constraint pk_planograma primary key(prateleira_altura, produto_ean, corredor_nro, prateleira_lado),
   constraint fk_planograma_produto foreign key(produto_ean) references produto(produto_ean),
   constraint fk_planograma_prateleira foreign key(corredor_nro, prateleira_lado, prateleira_altura)
-  references prateleira(prateleira_nro, prateleira_lado, prateleira_altura));
+  references prateleira(corredor_nro, prateleira_lado, prateleira_altura));
 
 create table evento_reposicao
   (operador varchar(80) not null,
