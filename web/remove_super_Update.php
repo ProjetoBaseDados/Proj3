@@ -48,8 +48,8 @@
                   $db->query($sql);
                 }
 
-                /*$sql = "DELETE FROM categoria WHERE categoria_name='$categoria_name';";
-                $db->query($sql);*/
+                $sql = "DELETE FROM categoria WHERE categoria_name='$categoria_name';";
+                $db->query($sql);
 
                 echo("<p>$sql</p>");
 
