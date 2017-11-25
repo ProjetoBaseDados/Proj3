@@ -38,8 +38,6 @@
 
         echo("<p>$sql</p>");
 
-        $db->query($sql);
-
         $db->query("commit;");
 
         echo("<a href=\"mainMenu.php\">Go back to Main Menu</a>");
