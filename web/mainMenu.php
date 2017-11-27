@@ -15,25 +15,31 @@
        /*
         * a)
         */
-        echo("<p href=\"remove_categories.php\">Remove categories or sub-categories</p>\n");
-        echo("<p href=\"insert_categoria.php\">Insert Category</p>\n");
-        echo("<p href=\"insert_sub_categoria.php\">Insert Sub-Category</p>\n");
+        echo("<a href=\"remove_categories.php\">Remove categories or sub-categories</a>");
+        echo("<p> </p>");
+        echo("<a href=\"insert_categoria.php\">Insert Category</a>\n");
+        echo("<p> </p>");
+        echo("<a href=\"insert_sub_categoria.php\">Insert Sub-Category</a>\n");
+        echo("<p> </p>");
        /*
         * b)
         */
-        echo("<p href=\"insert_products.php\">Insert/remove products</p>\n");
+        echo("<a href=\"insert_products.php\">Insert/remove products</a>\n");
+        echo("<p> </p>");
        /*
         * c)
         */
-        echo("<p href=\"list_reposition_events.php\">List reposition events</p>\n");
+        echo("<a href=\"list_reposition_events.php\">List reposition events</a>\n");
+        echo("<p> </p>");
         /*
         * d)
         */
-        echo("<p href=\"change_designation.php\">Change designation</p>\n");
+        echo("<a href=\"change_designation.php\">Change designation</a>\n");
+        echo("<p> </p>");
         /*
         * e)
         */
-        echo("<p href=\"list_sub-categories.php\">List sub-categories of super-category</p>\n");
+        echo("<a href=\"list_sub-categories.php\">List sub-categories of super-category</a>\n");
 
         $db = null;
     }
