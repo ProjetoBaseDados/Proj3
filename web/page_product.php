@@ -12,9 +12,14 @@
         $db = new PDO("pgsql:host=$host;dbname=$dbname", $user, $password);
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql = "SELECT product_design, product_ean FROM produto;";
+        $sql = "SELECT produto_ean, produto_design FROM produto;";
 
         $result = $db->query($sql);
+
+        echo("<a href=\"insert_product_with_Secondaries.php\">Insert new product with secondary providers</a>");
+        echo("<p></p>");
+        echo("<a href=\"insert_product_without_Secondaries.php\">Insert new product without secondary providers</a>");
+        echo("<p></p>");
 
         echo("<table border=\"0\" cellspacing=\"5\">\n");
         foreach($result as $row)

@@ -24,7 +24,7 @@
        /*
         * b)
         */
-        echo("<a href=\"insert_products.php\">Insert/remove products</a>\n");
+        echo("<a href=\"page_product.php\">Insert/remove products</a>\n");
         echo("<p> </p>");
        /*
         * c)

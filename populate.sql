@@ -212,6 +212,7 @@ insert into prateleira values (3, 'direito', 'medio');
 insert into prateleira values (3, 'direito', 'superior');
 
 insert into planograma values ('1234567891111', 1, 'esquerdo', 'chao', 3, 20, 'tua mae');        -- ean, nro_corredor, lado, altura, numero de frentes de produtos visiveis, unidades_max, localizaçao
+insert into planograma values ('1234567891111', 2, 'esquerdo', 'chao', 3, 20, 'tua mae');
 insert into planograma values ('1234567891112', 1, 'esquerdo', 'chao', 3, 20, 'tua mae');
 insert into planograma values ('1234567891113', 1, 'esquerdo', 'chao', 3, 20, 'tua mae');
 insert into planograma values ('1234567891114', 1, 'esquerdo', 'medio', 3, 20, 'tua mae');
@@ -266,7 +267,7 @@ insert into evento_reposicao values ('Kim Jong-un', '2017-11-22 14:30:00');
 
 
 insert into reposicao values ('1234567891111', 1, 'esquerdo', 'chao', 'Socrates', '2017-11-22 14:00:00', 2);            -- ean, nro_corredor, lado, altura, operador, data, unidades_repostas
-insert into reposicao values ('1234567891111', 2, 'esquerdo', 'chao', 'Trump', '2017-11-22 14:05:00', 5);
+insert into reposicao values ('1234567891111', 2, 'esquerdo', 'chao', 'Kim Jong-un', '2017-11-22 14:05:00', 5);
 insert into reposicao values ('1234567891112', 1, 'esquerdo', 'chao', 'Socrates', '2017-11-22 14:15:00', 2);
 insert into reposicao values ('1234567891113', 1, 'esquerdo', 'chao', 'Socrates', '2017-11-22 14:30:00', 2);
 insert into reposicao values ('1234567891114', 1, 'esquerdo', 'medio', 'Trump', '2017-11-22 14:00:00', 2);
