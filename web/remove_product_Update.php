@@ -15,30 +15,45 @@
 
                 $db->query("start transaction;");
 
-                $sql1 = "SELECT COUNT(sub_categoria_name) FROM constituida WHERE sub_categoria_name = '$categoria_name';";
-                $if = $db->query($sql1);
+                $result = $db->query("SELECT fornecedor_nif from produto WHERE produto_ean = '$produto_ean';");
+                foreach($result as $row) {
+                  $fornecedor_nif = $row['fornecedor_nif'];
+                }
 
-                if ($if > 0) {
-                  $result = $db->query("SELECT super_categoria_name from constituida WHERE sub_categoria_name = '$categoria_name';");
-                  foreach($result as $row) {
-                    $newCat = $row['super_categoria_name'];
-                  }
-                  $sql = "UPDATE produto SET categoria_name = '$newCat' WHERE categoria_name = '$categoria_name';";
-                  $db->query($sql);
+                $sql = "DELETE FROM produto WHERE produto_ean ='$produto_ean';";
+                $db->query($sql);
 
-                  $sql = "DELETE FROM constituida WHERE sub_categoria_name ='$categoria_name';";
-                  $db->query($sql);
+                $sql1 = "SELECT COUNT(produto_ean) FROM produto WHERE fornecedor_nif = '$fornecedor_nif';";
+                $if1 = $db->query($sql1);
 
-                } else {
-                  $sql = "UPDATE produto SET categoria_name = 'Outros' WHERE categoria_name = '$categoria_name';";
+                $sql2 = "SELECT COUNT(product_ean) FROM fornecedor_sec WHERE fornecedor_nif = '$fornecedor_nif';";
+                $if2 = $db->query($sql2);
+
+                if ($if1 <= 1 or $if2 <= 0) {
+                  $sql = "DELETE FROM fornecedor WHERE fornecedor_nif ='$fornecedor_nif';";
                   $db->query($sql);
                 }
 
-                $sql = "DELETE FROM categoria_simples WHERE categoria_name ='$categoria_name';";
+                $sql = "SELECT fornecedor_nif FROM fornecedor_sec WHERE produto_ean = '$produto_ean';";
+                $result = $db->query($sql);
+
+                $sql = "DELETE FROM fornecedor_sec WHERE produto_ean = '$produto_ean';";
                 $db->query($sql);
 
-                $sql = "DELETE FROM categoria WHERE categoria_name='$categoria_name';";
-                $db->query($sql);
+                foreach($result as $row) {
+                  $forn_nif = $row['fornecedor_nif'];
+
+                  $sql1 = "SELECT COUNT(produto_ean) FROM produto WHERE fornecedor_nif = '$forn_nif';";
+                  $if1 = $db->query($sql1);
+
+                  $sql2 = "SELECT COUNT(product_ean) FROM fornecedor_sec WHERE fornecedor_nif = '$forn_nif';";
+                  $if2 = $db->query($sql2);
+
+                  if ($if1 <= 0 or $if2 <= 1) {
+                    $sql = "DELETE FROM fornecedor WHERE fornecedor_nif ='$forn_nif';";
+                    $db->query($sql);
+                  }
+                }
 
                 echo("<p>$sql</p>");
 
