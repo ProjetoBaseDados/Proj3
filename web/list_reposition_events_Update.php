@@ -13,7 +13,8 @@
         $db = new PDO("pgsql:host=$host;dbname=$dbname", $user, $password);
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql = "SELECT operador, instante, reposicao_unidades FROM evento_reposicao NATURAL JOIN reposicao NATURAL JOIN planograma NATURAL JOIN produto
+        $sql = "SELECT operador, instante, reposicao_unidades FROM produto
+        NATURAL JOIN planograma NATURAL JOIN reposicao NATURAL JOIN evento_reposicao
         WHERE produto_ean = '$product';";
 
         $result = $db->query($sql);

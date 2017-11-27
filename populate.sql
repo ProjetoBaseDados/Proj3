@@ -253,6 +253,7 @@ insert into planograma values ('1234567891513', 3, 'direito', 'superior', 1, 20,
 -- insert into planograma values ('1234567891514', 3, 'direito', 'superior', 2, 20, 'tua mae');
 
 insert into evento_reposicao values ('Socrates', '2017-11-22 14:00:00');            -- operador, data
+insert into evento_reposicao values ('Kim Jong-un', '2017-11-22 14:05:00');
 insert into evento_reposicao values ('Socrates', '2017-11-22 14:15:00');
 insert into evento_reposicao values ('Socrates', '2017-11-22 14:30:00');
 insert into evento_reposicao values ('Trump', '2017-11-22 14:00:00');
@@ -265,6 +266,7 @@ insert into evento_reposicao values ('Kim Jong-un', '2017-11-22 14:30:00');
 
 
 insert into reposicao values ('1234567891111', 1, 'esquerdo', 'chao', 'Socrates', '2017-11-22 14:00:00', 2);            -- ean, nro_corredor, lado, altura, operador, data, unidades_repostas
+insert into reposicao values ('1234567891111', 2, 'esquerdo', 'chao', 'Trump', '2017-11-22 14:05:00', 5);
 insert into reposicao values ('1234567891112', 1, 'esquerdo', 'chao', 'Socrates', '2017-11-22 14:15:00', 2);
 insert into reposicao values ('1234567891113', 1, 'esquerdo', 'chao', 'Socrates', '2017-11-22 14:30:00', 2);
 insert into reposicao values ('1234567891114', 1, 'esquerdo', 'medio', 'Trump', '2017-11-22 14:00:00', 2);
