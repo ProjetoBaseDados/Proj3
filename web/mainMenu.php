@@ -16,6 +16,8 @@
         * a)
         */
         echo("<a href=\"remove_categories.php\">Remove categories or sub-categories</a>\n");
+        echo("<a href=\"insert_categoria.php\">Insert Category</a>\n");
+        echo("<a href=\"insert_sub_categoria.php\">Insert Sub-Category</a>\n");
        /*
         * b)
         */
@@ -32,19 +34,6 @@
         * e)
         */
         echo("<a href=\"list_sub-categories.php\">List sub-categories of super-category</a>\n");
-
-        $sql = "SELECT * FROM categoria;";
-
-        $result = $db->query($sql);
-
-        echo("<table border=\"0\" cellspacing=\"5\">\n");
-        foreach($result as $row)
-        {
-            echo("<tr>\n");
-            echo("<td>{$row['categoria_name']}</td>\n");
-            echo("</tr>\n");
-        }
-        echo("</table>\n");
 
         $db = null;
     }

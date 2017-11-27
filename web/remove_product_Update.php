@@ -1,8 +1,8 @@
 <html>
     <body>
-        <h3>Remover categoria <?=$_REQUEST['super_categoria_name']?>: Concluida</h3>
+        <h3>Remover Produto <?=$_REQUEST['produto_ean']?>: Concluida</h3>
         <?php
-        $categoria_name = $_REQUEST['super_categoria_name'];
+            $produto_ean = $_REQUEST['produto_ean'];
             try
             {
                 $host = "db.ist.utl.pt";
@@ -16,11 +16,9 @@
                 $db->query("start transaction;");
 
                 $sql1 = "SELECT COUNT(sub_categoria_name) FROM constituida WHERE sub_categoria_name = '$categoria_name';";
-                $result = $db->query($sql1);
-                foreach($result as $row) {
-                  $if = $row['count'];
-                }
-                if ($if > '0') {
+                $if = $db->query($sql1);
+
+                if ($if > 0) {
                   $result = $db->query("SELECT super_categoria_name from constituida WHERE sub_categoria_name = '$categoria_name';");
                   foreach($result as $row) {
                     $newCat = $row['super_categoria_name'];
@@ -28,25 +26,16 @@
                   $sql = "UPDATE produto SET categoria_name = '$newCat' WHERE categoria_name = '$categoria_name';";
                   $db->query($sql);
 
-                  $sql = "UPDATE constituida SET super_categoria_name = '$newCat' WHERE super_categoria_name = '$categoria_name';";
-                  $db->query($sql);
-
                   $sql = "DELETE FROM constituida WHERE sub_categoria_name ='$categoria_name';";
-                  $db->query($sql);
-
-                  $sql = "DELETE FROM super_categoria WHERE categoria_name ='$categoria_name';";
                   $db->query($sql);
 
                 } else {
                   $sql = "UPDATE produto SET categoria_name = 'Outros' WHERE categoria_name = '$categoria_name';";
                   $db->query($sql);
-
-                  $sql = "DELETE FROM constituida WHERE super_categoria_name ='$categoria_name';";
-                  $db->query($sql);
-
-                  $sql = "DELETE FROM super_categoria WHERE categoria_name ='$categoria_name';";
-                  $db->query($sql);
                 }
+
+                $sql = "DELETE FROM categoria_simples WHERE categoria_name ='$categoria_name';";
+                $db->query($sql);
 
                 $sql = "DELETE FROM categoria WHERE categoria_name='$categoria_name';";
                 $db->query($sql);
