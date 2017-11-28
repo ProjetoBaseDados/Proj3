@@ -32,9 +32,6 @@
         }
         echo("</table>\n");
 
-        echo("<a href=\"insert_product_with_Secondaries.php\">Insert new product with secondary providers</a>");
-        echo("<a href=\"insert_product_without_Secondaries.php\">Insert new product without secondary providers</a>");
-
         $db = null;
     }
     catch (PDOException $e)
