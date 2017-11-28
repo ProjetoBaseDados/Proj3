@@ -20,14 +20,18 @@
 
         //Verificar se existe fornecedor primario
         $sql1 = "SELECT COUNT(fornecedor_nif) FROM fornecedor WHERE fornecedor_nif = '$fornecedor_nif';";
-        $if1 = $db->query($sql1);
+        $result = $db->query($sql1);
+        foreach($result as $row) {
+          $if1 = $row['count'];
+        }
 
         if ($if1 == 0) {
           $sql = "INSERT INTO fornecedor values ('$fornecedor_nif', '$fornecedor_name');";
           $db->query($sql);
         }
-
-        $sql = "INSERT INTO produto values ('$produto_ean', '$produto_design', date('y/m/d'), '$categoria_name', '$fornecedor_nif');";
+        
+        $time = date('y/m/d');
+        $sql = "INSERT INTO produto values ('$produto_ean', '$produto_design', '$time', '$categoria_name', '$fornecedor_nif');";
         $db->query($sql);
 
         echo("<p>$sql</p>");

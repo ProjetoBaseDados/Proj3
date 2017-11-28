@@ -2,8 +2,8 @@
     <body>
         <h2>Insert new product without secondary providers</h2>
         <form action="insert_product_without_Secondaries_Update.php" method="post">
-            <p>Product EAN: <input type="text" name="product_ean"/></p>
-            <p>Product Design: <input type="text" name="product_design"/></p>
+            <p>Product EAN: <input type="text" name="produto_ean"/></p>
+            <p>Product Design: <input type="text" name="produto_design"/></p>
             <p>Categoria name: <input type="text" name="category_name"/></p>
             <p>Fornecedor Primario NIF: <input type="text" name="fornecedor_nif"/></p>
             <p>Fornecedor Primario name: <input type="text" name="fornecedor_name"/></p>
