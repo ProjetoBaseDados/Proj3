@@ -29,8 +29,8 @@
           $sql = "INSERT INTO fornecedor values ('$fornecedor_nif', '$fornecedor_name');";
           $db->query($sql);
         }
-        
-        $time = date('y/m/d');
+
+        $time = date('Y/m/d');
         $sql = "INSERT INTO produto values ('$produto_ean', '$produto_design', '$time', '$categoria_name', '$fornecedor_nif');";
         $db->query($sql);
 

@@ -17,6 +17,9 @@
         $result = $db->query($sql);
 
         echo("<table border=\"0\" cellspacing=\"5\">\n");
+        echo("<tr>\n");
+        echo("<td>Categoria Name</td>\n");
+        echo("<tr>\n");
         foreach($result as $row)
         {
             echo("<tr>\n");
@@ -31,6 +34,9 @@
         $result = $db->query($sql);
 
         echo("<table border=\"0\" cellspacing=\"5\">\n");
+        echo("<tr>\n");
+        echo("<td>Categoria Name</td>\n");
+        echo("<tr>\n");
         foreach($result as $row)
         {
             echo("<tr>\n");
