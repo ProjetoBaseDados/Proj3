@@ -23,8 +23,8 @@
 
         echo("<table border=\"0\" cellspacing=\"5\">\n");
         echo("<tr>\n");
-        echo("<td>{'Produto_EAN'}</td>\n");
-        echo("<td>{'Produto_Design'}</td>\n");
+        echo("<td>Produto_EAN</td>\n");
+        echo("<td>Produto_Design</td>\n");
         echo("<tr>\n");
         foreach($result as $row)
         {
