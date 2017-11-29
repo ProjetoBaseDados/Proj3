@@ -45,14 +45,14 @@
         }
 
         //Verificar se existe produto
-        $sql = "SELECT COUNT(produto_ean) FROM produto WHERE produto_ean = '$produto_ean';";
-        $result = $db->query($sql);
+        $sql2 = "SELECT COUNT(produto_ean) FROM produto WHERE produto_ean = '$produto_ean';";
+        $result = $db->query($sql2);
         foreach ($result as $row) {
-          $if = $row['count'];
+          $if2 = $row['count'];
         }
 
-        if($if == 0) {
-          $time = date('Y/m/d'); /* CHANGE TYPE OF DATA */
+        if($if2 == 0) {
+          $time = date('Y/m/d');
           $sql = "INSERT INTO produto values ('$produto_ean', '$produto_design', '$time', '$categoria_name', '$fornecedor_nif');";
           $db->query($sql);
         }

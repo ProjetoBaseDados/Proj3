@@ -30,7 +30,7 @@
           $db->query($sql);
         }
 
-        $time = date('Y/m/d'); /*CHANGE TYPE OF DATA*/
+        $time = date('Y/m/d');
         $sql = "INSERT INTO produto values ('$produto_ean', '$produto_design', '$time', '$categoria_name', '$fornecedor_nif');";
         $db->query($sql);
 
