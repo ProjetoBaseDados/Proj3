@@ -77,7 +77,7 @@ create table planograma
   prateleira_altura varchar(10) not null,
   face int not null,
   unidades int not null,
-  loc varchar(80) not null,
+  loc int not null,
   constraint pk_planograma primary key(prateleira_altura, produto_ean, corredor_nro, prateleira_lado),
   constraint fk_planograma_produto foreign key(produto_ean) references produto(produto_ean),
   constraint fk_planograma_prateleira foreign key(corredor_nro, prateleira_lado, prateleira_altura)
