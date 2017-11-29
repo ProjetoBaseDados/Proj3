@@ -50,8 +50,8 @@
         foreach ($result as $row) {
           $if2 = $row['count'];
         }
-        
-        if($if2 < 1) {
+
+        if($if2 == 0) {
           $time = date('Y/m/d');
           $sql = "INSERT INTO produto values ('$produto_ean', '$produto_design', '$time', '$categoria_name', '$fornecedor_nif');";
           $db->query($sql);
