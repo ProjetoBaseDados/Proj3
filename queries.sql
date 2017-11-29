@@ -4,4 +4,6 @@
 
 3) SELECT produto_ean FROM produto WHERE produto_ean NOT IN (SELECT produto_ean FROM reposicao);
 
-4)
+4) SELECT produto_ean FROM fornecedor_sec GROUP BY produto_ean HAVING count(distinct(fornecedor_nif)) > 10;
+
+5) SELECT produto_ean FROM reposicao GROUP BY produto_ean HAVING count(distinct(operador)) = 1;
