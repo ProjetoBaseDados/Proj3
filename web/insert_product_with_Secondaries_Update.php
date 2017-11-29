@@ -22,22 +22,38 @@
 
         //Verificar se existe fornecedor primario
         $sql1 = "SELECT COUNT(fornecedor_nif) FROM fornecedor WHERE fornecedor_nif = '$fornecedor_nif';";
-        $if1 = $db->query($sql1);
+        $result = $db->query($sql1);
+        foreach($result as $row) {
+          $if1 = $row['count'];
+        }
 
         if ($if1 == 0) {
           $sql = "INSERT INTO fornecedor values ('$fornecedor_nif', '$fornecedor_name');";
           $db->query($sql);
         }
 
-        $sql = "INSERT INTO produto values ('$produto_ean', '$produto_design', date('y/m/d'), '$categoria_name', '$fornecedor_nif');";
-        $db->query($sql);
-
         //Verificar se existe fornecedor secundario
         $sql1 = "SELECT COUNT(fornecedor_nif) FROM fornecedor WHERE fornecedor_nif = '$fornecedor_sec';";
-        $if1 = $db->query($sql1);
+        $result = $db->query($sql1);
+        foreach($result as $row) {
+          $if1 = $row['count'];
+        }
 
         if ($if1 == 0) {
           $sql = "INSERT INTO fornecedor values ('$fornecedor_sec', '$fornecedor_sec_name');";
+          $db->query($sql);
+        }
+
+        //Verificar se existe produto
+        $sql = "SELECT COUNT(produto_ean) FROM produto WHERE produto_ean = '$produto_ean';";
+        $result = $db->query($sql);
+        foreach ($result as $row) {
+          $if = $row['count'];
+        }
+
+        if($if == 0) {
+          $time = date('Y/m/d'); /* CHANGE TYPE OF DATA */
+          $sql = "INSERT INTO produto values ('$produto_ean', '$produto_design', '$time', '$categoria_name', '$fornecedor_nif');";
           $db->query($sql);
         }
 
