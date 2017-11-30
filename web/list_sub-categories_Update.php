@@ -1,6 +1,6 @@
 <html>
     <body>
-    <h3>List reposition of events</h3>
+    <h3>List sub-categories of super-category</h3>
 <?php
     $super_category = $_REQUEST['super-category'];
 

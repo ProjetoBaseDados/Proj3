@@ -1,6 +1,6 @@
 <html>
     <body>
-        <h2>Insert new product without secondary providers</h2>
+        <h2>Insert new product with secondary provider</h2>
         <form action="insert_product_with_Secondaries_Update.php" method="post">
             <p>Product EAN: <input type="text" name="produto_ean"/></p>
             <p>Product Design: <input type="text" name="produto_design"/></p>
