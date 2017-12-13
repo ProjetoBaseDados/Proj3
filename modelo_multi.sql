@@ -1,3 +1,7 @@
+-----------------------------
+-- Modelo Multidimencional
+-----------------------------
+
 drop table if exists table_facts cascade;
 drop table if exists d_tempo cascade;
 drop table if exists d_produto cascade;
@@ -25,16 +29,21 @@ insert into d_tempo (data, day, month, year) select instante, DATE_PART('day', i
 insert into table_facts (cean, data) select produto_ean, instante from reposicao;
 
 
-------- Querie ROLLUP
+-------------------
+-- Data Analytics
+-------------------
+
+-- Querie with ROLLUP
 
 select count(data), categoria, year, month
 from table_facts
 NATURAL JOIN d_tempo
 NATURAL JOIN d_produto
-where nif_fornecedor_principal = '123455678'
+where nif_fornecedor_principal = '123456788'
 group by rollup (categoria, year, month)
 order by count(data) desc;
 
+-- Querie with UNION
 
 select count(data), categoria, year, month
 from table_facts
