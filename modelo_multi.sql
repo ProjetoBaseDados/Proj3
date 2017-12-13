@@ -39,7 +39,7 @@ select count(data), categoria, year, month
 from table_facts
 NATURAL JOIN d_tempo
 NATURAL JOIN d_produto
-where nif_fornecedor_principal = '123456788'
+where nif_fornecedor_principal = '123455678'
 group by rollup (categoria, year, month)
 order by count(data) desc;
 
@@ -49,25 +49,25 @@ select count(data), categoria, year, month
 from table_facts
 NATURAL JOIN d_tempo
 NATURAL JOIN d_produto
-where nif_fornecedor_principal = '123456788'
+where nif_fornecedor_principal = '123455678'
 group by categoria, year, month
 UNION
 select count(data), categoria, year, null
 from table_facts
 NATURAL JOIN d_tempo
 NATURAL JOIN d_produto
-where nif_fornecedor_principal = '123456788'
+where nif_fornecedor_principal = '123455678'
 group by categoria, year
 UNION
 select count(data), categoria, null, null
 from table_facts
 NATURAL JOIN d_tempo
 NATURAL JOIN d_produto
-where nif_fornecedor_principal = '123456788'
+where nif_fornecedor_principal = '123455678'
 group by categoria
 UNION
 select count(data), null, null, null
 from table_facts
 NATURAL JOIN d_tempo
 NATURAL JOIN d_produto
-where nif_fornecedor_principal = '123456788';
+where nif_fornecedor_principal = '123455678';
