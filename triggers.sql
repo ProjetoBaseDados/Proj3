@@ -1,4 +1,4 @@
-drop trigger if exists verifica_se_primario on fornecedor;
+drop trigger if exists verifica_se_primario_trigger on fornecedor_sec;
 
 create or replace function verifica_se_primario() returns trigger as $$
 begin
@@ -9,11 +9,11 @@ begin
 End;
 $$ Language plpgsql;
 
-create trigger verifica_se_primario_trigger before insert on fornecedor_sec
-execute procedure verifica_se_primario();
+create trigger verifica_se_primario_trigger after insert on fornecedor_sec
+for each row execute procedure verifica_se_primario();
 
 
-drop trigger if exists verifica_se_secundario on produto;
+drop trigger if exists verifica_se_secundario_trigger on produto;
 
 create or replace function verifica_se_secundario() returns trigger as $$
 begin
@@ -24,12 +24,12 @@ begin
 End;
 $$ Language plpgsql;
 
-create trigger verifica_se_secundario_trigger before update on produto
-execute procedure verifica_se_secundario();
+create trigger verifica_se_secundario_trigger after update on produto
+for each row execute procedure verifica_se_secundario();
 
 
 
-drop trigger if exists verifica_data on evento_reposicao;
+drop trigger if exists verifica_data_trigger on evento_reposicao;
 
 create or replace function verifica_data() returns trigger as $$
 begin
@@ -40,5 +40,5 @@ begin
 End;
 $$ Language plpgsql;
 
-create trigger verifica_data_trigger before insert or update on evento_reposicao
-execute procedure verifica_data();
+create trigger verifica_data_trigger after insert or update on evento_reposicao
+for each row execute procedure verifica_data();
