@@ -41,7 +41,7 @@ drop trigger if exists verifica_data_trigger on evento_reposicao;
 create or replace function verifica_data() returns trigger as $$
 begin
 	if new.instante - now()::timestamp > '0 second'
-		then raise exception 'A data actual é %, impossivel repor produtos em %.', now(), new.instante;
+		then raise exception 'A data actual é %, impossivel repor produtos em %.', now()::timestamp, new.instante;
 	end if;
 	return new;
 End;
