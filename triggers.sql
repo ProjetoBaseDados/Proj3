@@ -1,3 +1,7 @@
+--------------------------------
+-- Restrições de Integridade
+--------------------------------
+
 drop trigger if exists verifica_se_primario_trigger on fornecedor_sec;
 
 create or replace function verifica_se_primario() returns trigger as $$
